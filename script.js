@@ -98,16 +98,29 @@ const quizInfo = [
     answer: "C",
   },
 ];
-const questionData = document.getElementById("question-data");
+
+const questionData = document.getElementById("questionData");
 const a1 = document.getElementById("a1");
 const a2 = document.getElementById("a2");
 const a3 = document.getElementById("a3");
 const a4 = document.getElementById("a4");
+const enterBtn = document.getElementById("enter_btn");
 
 let singleQuestion = 0;
 
 newQuestion();
 
 function newQuestion() {
-  singleQuestion++;
+  const nextQuestion = quizInfo[singleQuestion];
+  questionData.innerText = nextQuestion.question;
+
+  a1.innerText = nextQuestion.a;
+  a2.innerText = nextQuestion.b;
+  a3.innerText = nextQuestion.c;
+  a4.innerText = nextQuestion.d;
 }
+
+enterBtn.addEventListener("click", () => {
+  singleQuestion++;
+  newQuestion();
+});
