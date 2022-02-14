@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #537895;
+  background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.Q-box {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
+  width: 450px;
+  max-width: 100%;
+}
+
+.Q-text {
+  padding: 3rem;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+button {
+  background-color: #3d87c0;
+  color: white;
+  font-size: 1.5rem;
+  display: block;
+  width: 100%;
+  padding: 2rem;
+  cursor: pointer;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+button:hover {
+  background-color: #0e5083;
+}
+
+h2 {
+  margin: 0;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+ul li {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
