@@ -1,7 +1,7 @@
 const quizInfo = [
   {
     question:
-      "In Game of Thrones the motto - Winter is Coming - are the words of which House?",
+      "In Game of Thrones the motto 'Winter is Coming' are the words of which House?",
     a: "House Targaren",
     b: "House Karstark",
     c: "House Stark",
@@ -20,7 +20,7 @@ const quizInfo = [
   {
     question:
       "In the tv show Scrubs, the main character JD is consistantly tormented and bullied by whom?",
-    a: "A Garbage-man",
+    a: "A Garbage man",
     b: "A Male Nurse",
     c: "A Janitor",
     d: "A Cafeteria Cook",
@@ -44,58 +44,47 @@ const quizInfo = [
     answer: "A",
   },
   {
-    question:
-      "In Game of Thrones the motto - Winter is Coming - are the words of which House?",
-    a: "House Targaren",
-    b: "House Karstark",
-    c: "House Stark",
-    d: "House Lannister",
+    question: "In My Hero Academia what is Mr Aizawa's hero name?",
+    a: "Wraith",
+    b: "Blink",
+    c: "Eraserhead",
+    d: "Shadow",
     answer: "C",
   },
   {
-    question:
-      "In Game of Thrones the motto - Winter is Coming - are the words of which House?",
-    a: "House Targaren",
-    b: "House Karstark",
-    c: "House Stark",
-    d: "House Lannister",
-    answer: "C",
+    question: "Magneto is a mutant who can...?",
+    a: "Control the weather",
+    b: "Control metal",
+    c: "Shapeshift",
+    d: "Shoot lasers",
+    answer: "B",
   },
   {
     question:
-      "In Game of Thrones the motto - Winter is Coming - are the words of which House?",
-    a: "House Targaren",
-    b: "House Karstark",
-    c: "House Stark",
-    d: "House Lannister",
-    answer: "C",
+      "The character of vizcini in 'The Princess Bride' keeps exclaiming what word?",
+    a: "Impossible",
+    b: "Inevitable",
+    c: "Incredible",
+    d: "Inconcievable",
+    answer: "D",
   },
   {
     question:
-      "In Game of Thrones the motto - Winter is Coming - are the words of which House?",
-    a: "House Targaren",
-    b: "House Karstark",
-    c: "House Stark",
-    d: "House Lannister",
-    answer: "C",
+      "Hokey religions and ancient weapons are no match for a good _____ at your side, kid.",
+    a: "Blaster",
+    b: "Lightsaber",
+    c: "Firearm",
+    d: "Crossbow",
+    answer: "A",
   },
   {
     question:
-      "In Game of Thrones the motto - Winter is Coming - are the words of which House?",
-    a: "House Targaren",
-    b: "House Karstark",
-    c: "House Stark",
-    d: "House Lannister",
-    answer: "C",
-  },
-  {
-    question:
-      "In Game of Thrones the motto - Winter is Coming - are the words of which House?",
-    a: "House Targaren",
-    b: "House Karstark",
-    c: "House Stark",
-    d: "House Lannister",
-    answer: "C",
+      "The bard Jaskier in the tv show 'The Witcher' is known by what name in the books series of the same name",
+    a: "Buttercup",
+    b: "Dandilion",
+    c: "Daffodil",
+    d: "Daisy",
+    answer: "B",
   },
 ];
 
@@ -122,5 +111,9 @@ function newQuestion() {
 
 enterBtn.addEventListener("click", () => {
   singleQuestion++;
-  newQuestion();
+  if (singleQuestion < quizInfo.length) {
+    newQuestion();
+  } else {
+    alert("Game Over");
+  }
 });
