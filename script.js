@@ -6,7 +6,7 @@ const quizInfo = [
     b: "House Karstark",
     c: "House Stark",
     d: "House Lannister",
-    answer: "C",
+    answer: "c",
   },
   {
     question:
@@ -15,7 +15,7 @@ const quizInfo = [
     b: "1955",
     c: "1975",
     d: "1945",
-    answer: "B",
+    answer: "b",
   },
   {
     question:
@@ -24,7 +24,7 @@ const quizInfo = [
     b: "A Male Nurse",
     c: "A Janitor",
     d: "A Cafeteria Cook",
-    answer: "C",
+    answer: "c",
   },
   {
     question: "The Term Pokemon is short for what phrase?",
@@ -32,7 +32,7 @@ const quizInfo = [
     b: "Portable Monsters",
     c: "Pintsize Monsters",
     d: "Pocket Monsters",
-    answer: "D",
+    answer: "d",
   },
   {
     question:
@@ -41,7 +41,7 @@ const quizInfo = [
     b: "Vicky",
     c: "Veronica ",
     d: "Victoria",
-    answer: "A",
+    answer: "a",
   },
   {
     question: "In My Hero Academia what is Mr Aizawa's hero name?",
@@ -49,7 +49,7 @@ const quizInfo = [
     b: "Blink",
     c: "Eraserhead",
     d: "Shadow",
-    answer: "C",
+    answer: "c",
   },
   {
     question: "Magneto is a mutant who can...?",
@@ -57,7 +57,7 @@ const quizInfo = [
     b: "Control metal",
     c: "Shapeshift",
     d: "Shoot lasers",
-    answer: "B",
+    answer: "b",
   },
   {
     question:
@@ -66,7 +66,7 @@ const quizInfo = [
     b: "Inevitable",
     c: "Incredible",
     d: "Inconcievable",
-    answer: "D",
+    answer: "d",
   },
   {
     question:
@@ -75,7 +75,7 @@ const quizInfo = [
     b: "Lightsaber",
     c: "Firearm",
     d: "Crossbow",
-    answer: "A",
+    answer: "a",
   },
   {
     question:
@@ -84,7 +84,7 @@ const quizInfo = [
     b: "Dandilion",
     c: "Daffodil",
     d: "Daisy",
-    answer: "B",
+    answer: "b",
   },
 ];
 
@@ -96,6 +96,7 @@ const a4 = document.getElementById("a4");
 const enterBtn = document.getElementById("enter_btn");
 
 let singleQuestion = 0;
+let correctScore = 0;
 
 newQuestion();
 
@@ -109,7 +110,24 @@ function newQuestion() {
   a4.innerText = nextQuestion.d;
 }
 
+function getAnswer() {
+  const answers = document.querySelectorAll("answer");
+  let correct = undefined;
+  answers.forEach((answer) => {
+    if (answer.checked) {
+      correct = answer.id;
+    }
+  });
+  return correct;
+}
+
 enterBtn.addEventListener("click", () => {
+  const correct = getAnswer();
+
+  if (correct) {
+    if (correct === quizInfo[singleQuestion].answer) correctScore++;
+  }
+
   singleQuestion++;
   if (singleQuestion < quizInfo.length) {
     newQuestion();
